@@ -39,7 +39,6 @@ const useApi = <T,>(endpoint: string): State<T> => {
             dispatch({ type: 'FETCH_INIT' });
             try {
                 const response = await api.get<T>(endpoint);
-                console.log("see the response", response)
                 dispatch({ type: 'FETCH_SUCCESS', payload: response.data });
             } catch (error) {
                 if (error instanceof Error) {
