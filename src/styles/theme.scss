@@ -1,0 +1,25 @@
+$light-theme: (
+  background-color: #fff,
+  text-color: #000,
+  card-background: #f9f9f9,
+  navbar-background: #333,
+);
+
+$dark-theme: (
+  background-color: #121212,
+  text-color: #fff,
+  card-background: #1e1e1e,
+  navbar-background: #222,
+);
+
+:root {
+  @each $key, $value in $light-theme {
+    --#{$key}: #{$value};
+  }
+}
+
+body.dark-mode {
+  @each $key, $value in $dark-theme {
+    --#{$key}: #{$value};
+  }
+}

@@ -1,0 +1,55 @@
+// Variables
+$primary-color: #0066cc;
+$secondary-color: #333;
+$background-color: #f4f4f4;
+$card-background: #fff;
+$border-radius: 8px;
+$box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+$transition-speed: 0.3s;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin card-hover {
+  transition: transform $transition-speed ease;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@mixin responsive($property, $value-xs, $value-sm, $value-md, $value-lg) {
+  #{$property}: $value-xs;
+  
+  @media (min-width: 576px) {
+    #{$property}: $value-sm;
+  }
+  
+  @media (min-width: 768px) {
+    #{$property}: $value-md;
+  }
+  
+  @media (min-width: 992px) {
+    #{$property}: $value-lg;
+  }
+}
+
+// others
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  
+    .card {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+  }
