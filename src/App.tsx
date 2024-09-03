@@ -11,10 +11,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+<div className={`app-container ${darkMode ? 'dark-mode' : ''}`}>
       <button onClick={toggleDarkMode}>
         Toggle {darkMode ? 'Light' : 'Dark'} Mode
       </button>
+      
       <AppRouter />
     </div>
   );

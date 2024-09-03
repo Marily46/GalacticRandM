@@ -1,6 +1,6 @@
 import { Box, TextField } from "@mui/material";
 import { useState } from "react";
-
+import '../styles/filters.scss'
 const Search: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }) => {
     const [searchQ, setSearchQ] = useState('');
 

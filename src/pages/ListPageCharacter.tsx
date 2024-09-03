@@ -8,7 +8,6 @@ import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import '../styles/filters.scss';
 
-
 const ListPageCharacter: React.FC = () => {
     const { data, loading, error } = useApi<ApiResponse<Character>>('/character');
     const [filteredCharacters, setFilteredCharacters] = useState<Character[]>([]);
@@ -49,11 +48,14 @@ const ListPageCharacter: React.FC = () => {
     const indexOfLastCharacter = currentPage * charactersPerPage;
     const indexFirstCharacter = indexOfLastCharacter - charactersPerPage;
     const currentCharacters = changeCharacters.slice(indexFirstCharacter, indexOfLastCharacter);
-
     return (
-        <>
-            <Filter onFilterChange={handleFilterChange} />
-            <Search onSearch={handleSearch} />
+        <div>
+            <div className="filter-search-container">
+                <Filter onFilterChange={handleFilterChange} />
+                <Search onSearch={handleSearch} />
+                {/* Elimina este botón si ya existe en el componente Filter */}
+                {/* <button className="apply-button">Apply Filters</button> */}
+            </div>
             <GridCharacter characters={currentCharacters} />
             <Stack spacing={2} alignItems="center" sx={{ mt: 3 }}>
                 <div className="pagination-container">
@@ -64,10 +66,10 @@ const ListPageCharacter: React.FC = () => {
                         color="primary"
                     />
                 </div>
-
             </Stack>
-        </>
+        </div>
     );
+    
 };
 
 export default ListPageCharacter;
