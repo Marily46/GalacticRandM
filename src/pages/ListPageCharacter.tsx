@@ -53,8 +53,6 @@ const ListPageCharacter: React.FC = () => {
             <div className="filter-search-container">
                 <Filter onFilterChange={handleFilterChange} />
                 <Search onSearch={handleSearch} />
-                {/* Elimina este botón si ya existe en el componente Filter */}
-                {/* <button className="apply-button">Apply Filters</button> */}
             </div>
             <GridCharacter characters={currentCharacters} />
             <Stack spacing={2} alignItems="center" sx={{ mt: 3 }}>
